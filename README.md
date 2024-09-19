@@ -1,21 +1,19 @@
 ## Screens shots
 
-Size 12
+Amount 12
 ![Размер 12](src/assets/2.png)
 
-Size 100
+Amount 100
 ![Размер 100](src/assets/3.png)
 
-Size 3
+Amount 3
 ![Размер 3](src/assets/1.png)
 
-Primary, size 'L'
-![Вариант 1](src/assets/4.png)
-
-Secondary, size 'M'
+Primary, size 'M'
 ![Вариант 2](src/assets/5.png)
 
-
+Secondary, size 'L'
+![Вариант 1](src/assets/4.png)
 
 ## Getting Started
 

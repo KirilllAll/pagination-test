@@ -13,67 +13,59 @@ interface PaginationProps {
   variant: Variant;
 }
 
-const Pagination: React.FC<PaginationProps> = memo(
-  ({ totalPages, callback, size, variant, className }) => {
-    const [currentPage, setCurrentPage] = useState<number>(STEP);
+const Pagination: React.FC<PaginationProps> = memo(({ totalPages, callback, size, variant, className }) => {
+  const [currentPage, setCurrentPage] = useState<number>(STEP);
 
-    const wrapperClassnames = classNames(styles.pagination, className);
+  const wrapperClassnames = classNames(styles.pagination, className);
 
-    const getButtonClassnames = (page: number | string) =>
-      classNames({
-        [styles.active]: currentPage === page,
-        [styles.primary]: variant === 'primary',
-        [styles.secondary]: variant === 'secondary',
-        [styles.small]: size === 's',
-        [styles.medium]: size === 'm',
-        [styles.large]: size === 'l',
-      });
+  const getButtonClassnames = (page: number | string) =>
+    classNames({
+      [styles.active]: currentPage === page,
+      [styles.primary]: variant === 'primary',
+      [styles.secondary]: variant === 'secondary',
+      [styles.small]: size === 's',
+      [styles.medium]: size === 'm',
+      [styles.large]: size === 'l',
+    });
 
-    const handlePageChange = (page: number) => {
-      if (page !== currentPage && page >= STEP && page <= totalPages) {
-        setCurrentPage(page);
-        if (callback) {
-          callback(page);
-        }
+  const handlePageChange = (page: number) => {
+    if (page !== currentPage && page >= STEP && page <= totalPages) {
+      setCurrentPage(page);
+      if (callback) {
+        callback(page);
       }
-    };
+    }
+  };
 
-    const handleClick = (event: React.MouseEvent) => {
-      const target = event.target as HTMLElement;
-      const page = target.getAttribute('data-page');
+  const handleClick = (event: React.MouseEvent) => {
+    const target = event.target as HTMLElement;
+    const page = target.getAttribute('data-page');
 
-      if (page) {
-        handlePageChange(Number(page));
-      }
-    };
+    if (page) {
+      handlePageChange(Number(page));
+    }
+  };
 
-    const pages = useMemo(() => getPages(totalPages, currentPage), [totalPages, currentPage]);
+  const pages = useMemo(() => getPages(totalPages, currentPage), [totalPages, currentPage]);
 
-    const renderPagination = () =>
-      pages.map((page, index) =>
-        page === '...' ? (
-          <span key={page + index} className={styles.dots} aria-hidden="true">
-            ...
-          </span>
-        ) : (
-          <button
-            data-page={page}
-            key={page}
-            className={getButtonClassnames(page)}
-            aria-current={currentPage === page ? 'true' : undefined}
-            aria-label={`Page ${page}`}
-          >
-            {page}
-          </button>
-        )
-      );
-
-    return (
-      <div onClick={handleClick} className={wrapperClassnames}>
-        {renderPagination()}
-      </div>
+  const renderPagination = () =>
+    pages.map((page, index) =>
+      page === '...' ? (
+        <span key={page + index} className={styles.dots}>
+          ...
+        </span>
+      ) : (
+        <button type='button' data-page={page} key={page} className={getButtonClassnames(page)}>
+          {page}
+        </button>
+      )
     );
-  }
-);
+
+  return (
+    <div onClick={handleClick} className={wrapperClassnames}>
+      {renderPagination()}
+    </div>
+  );
+});
 
 export default Pagination;
