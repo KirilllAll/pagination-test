@@ -6,14 +6,16 @@ Size 12
 Size 100
 ![Размер 100](src/assets/3.png)
 
+Size 3
+![Размер 3](src/assets/1.png)
+
 Primary, size 'L'
 ![Вариант 1](src/assets/4.png)
 
 Secondary, size 'M'
 ![Вариант 2](src/assets/5.png)
 
-Size small
-![Размер 3](src/assets/1.png)
+
 
 ## Getting Started
 
