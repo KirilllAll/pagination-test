@@ -7,7 +7,7 @@ Size 100
 ![Размер 100](src/assets/3.png)
 
 Size small
-![Размер 3](src/assets/1.png)
+![Размер 100](src/assets/1.png)
 
 Primary, size 'L'
 ![Вариант 1](src/assets/4.png)
