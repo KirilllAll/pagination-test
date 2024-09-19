@@ -6,7 +6,7 @@ Size 12
 Size 100
 ![Размер 100](src/assets/3.png)
 
-Size < 4
+Size small
 ![Размер 3](src/assets/1.png)
 
 Primary, size 'L'
