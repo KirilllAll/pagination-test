@@ -13,7 +13,7 @@ Secondary, size 'M'
 ![Вариант 2](src/assets/5.png)
 
 Size small
-![Размер 100](src/assets/Screenshot 2024-09-19 at 15.16.07.png)
+![Размер 3](src/assets/1.png)
 
 ## Getting Started
 
