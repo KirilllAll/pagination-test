@@ -1,0 +1,49 @@
+.pagination {
+	display: flex;
+	gap: 8px;
+  }
+  
+  button {
+	cursor: pointer;
+	border: none;
+	color: white;
+  }
+
+  .primary {
+	background-color: #726a6a;
+  }
+
+  .primary.active {
+	background-color: #007bff;
+	
+  }
+
+  .secondary {
+	background-color: rgb(220, 138, 138);
+  }
+
+  .secondary.active {
+	background-color: #d54b6b;
+  }
+  
+  .dots {
+	padding: 8px 12px;
+  }
+  
+  .small {
+	padding: 8px 8px;
+	font-size: 8px;
+	font-weight: 400;
+  }
+
+  .medium {
+	padding: 12px 12px;
+	font-size: 12px;
+	font-weight: 500;
+  }
+
+  .large {
+	padding: 16px 16px;
+	font-size: 16px;
+	font-weight: 600;
+  }
